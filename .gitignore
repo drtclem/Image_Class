@@ -3,3 +3,12 @@ __pycache__
 .env
 data
 models
+cat_images
+dog_images
+train
+train/cat_images
+train/dog_images
+train/cat_images/*
+train/dog_images/*
+train/cat_images/.gitkeep
+train/dog_images/.gitkeep
