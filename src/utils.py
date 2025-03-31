@@ -24,9 +24,9 @@ IMAGE_HEIGHT=64
 IMAGE_WIDTH=48
 ASPECT_RATIO=4/3
 
-SINGLE_TRAINING_RUN_EPOCHS=100
-SINGLE_TRAINING_RUN_STEPS_PER_EPOCH=50
-SINGLE_TRAINING_RUN_VALIDATION_STEPS=50
+SINGLE_TRAINING_RUN_EPOCHS=200
+SINGLE_TRAINING_RUN_STEPS_PER_EPOCH=25
+SINGLE_TRAINING_RUN_VALIDATION_STEPS=25
 
 OPTIMIZATION_TRAINING_RUN_EPOCHS=20
 OPTIMIZATION_TRAINING_RUN_STEPS_PER_EPOCH=10
@@ -143,7 +143,7 @@ def single_training_run(
 
     # Make output file name string using values of arguments
     # from function call
-    results_file='../data/experiment_results/single_model_run'
+    results_file='../src/dogs-vs-cats/single_model_run'
     for key, value in named_args.items():
         if key != 'training_data_path':
             results_file+=f'_{value}'
@@ -198,7 +198,6 @@ def single_training_run(
         with open(results_file, 'rb') as output_file:
             training_result=pickle.load(output_file)
 
-
     return training_result
 
 
@@ -251,7 +250,7 @@ def hyperparameter_optimization_run(
 
     # Make output file name string using values of arguments
     # from function call
-    results_file='../data/experiment_results/optimization_run'
+    results_file='../src/dogs-vs-cats/optimization_run'
     
     for key, value in named_args.items():
         if key != 'training_data_path':
