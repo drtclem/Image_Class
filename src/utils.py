@@ -244,7 +244,7 @@ def hyperparameter_optimization_run(
 ) -> keras.callbacks.History:
     
     '''Does hyperparameter optimization run'''
-
+    print('I am the right function')
     # Get dictionary of all arguments being passed into function
     named_args = {**locals()}
 
@@ -333,7 +333,9 @@ def hyperparameter_optimization_run(
 def plot_hyperparameter_optimization_run(
         hyperparameter_optimization_results: dict,
         hyperparameters: dict,
-        plot_labels: list
+        plot_labels: list,
+        accuracy_ylims: list= [None, None],
+        entropy_ylims: list = [None, None]
 ) -> plt:
     
     '''Takes hyperparameter optimization results and hyperparameters dictionary, plots.'''
