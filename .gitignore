@@ -12,3 +12,11 @@ train/cat_images/*
 train/dog_images/*
 train/cat_images/.gitkeep
 train/dog_images/.gitkeep
+src/test1/
+src/test1/cat_images
+src/test1/dog_images
+src/test1/cat_images/*
+src/test1/dog_images/*
+src/dogs-vs-cats 
+src/test1/*
+
