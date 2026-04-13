@@ -1,72 +1,43 @@
-# Image classification environment set-up
+# Image Classification: Cats & Dogs
 
-Using this fork will get you up and running in a codespace in just a few minutes.
+A convolutional neural network (CNN) pipeline for binary image classification, built and tuned end-to-end in Python.
 
-## 1. Get a Kaggle account
+## Overview
 
-The dataset is hosted on Kaggle. To download it you need a free account. It's easy to set up via the following link:
+This project walks through a complete image classification workflow — from raw data loading and exploratory analysis through baseline modeling, iterative hyperparameter tuning, and regularization — using a cats vs. dogs dataset.
 
-[Login or Register | Kaggle](https://www.kaggle.com/account/login?phase=startRegisterTab)
-
-After setting up your account you will need to verify with a phone number to use the Kaggle API. You can do this from the *settings* tab in the menu revealed by clicking your profile picture at the top right of any Kaggle page.
-
-Once you are registered and logged in:
-
-- Go to the [Dogs vs Cats competition](https://www.kaggle.com/competitions/dogs-vs-cats) page
-- Go to the 'Data' tab
-- Scroll down and click 'Join competition'
-
-Now, you need to generate and save an API access token so that you can download the dataset from within a codespace:
-
-- From the kaggle homepage, click on your profile picture in the upper right
-- Select 'Settings'
-- Scroll down, under API, click 'Create New Token'
-- Click 'Continue'
-- Save the key file on you local machine
-
-The contents of the file should look like this:
-
-```json
-{"username":"your-user-name","key":"a-bunch-of-letters-and-numbers"}
-```
-
-## 2. Start a codespace
-
-Once you have your Kaggle username and API key, fork this repository and start a Codespace as you normally would.
-
-## 3. Add your Kaggle API key
-
-From your codespace, open the .env file and add your Kaggle username and key from the `kaggle.json` file you downloaded to your computer from the Kaggle site earlier.
+## Project Structure
 
 
-```bash
-export KAGGLE_USERNAME=your-user-name
-export KAGGLE_KEY=a-bunch-of-letters-and-numbers
-```
 
-Then, source the environment file to export the environment variables to the codespace shell:
+## Workflow
 
-```bash
-source .env
-```
+**1. Data Preparation**
+- Load and organize image file paths
+- Split data into train/validation sets
+- Visualize sample images across classes
 
-Now, your username and key are stored in `KAGGLE_USERNAME` and `KAGGLE_KEY` respectively. Placing them in environment variables makes them available to any application running in the codespace. Test it by running the following command in the terminal:
+**2. Exploratory Data Analysis**
+- Pixel intensity distributions by color channel
+- Image dimension analysis
+- Aspect ratio distribution
 
-```bash
-echo $KAGGLE_USERNAME
-```
+**3. Modeling**
+- Baseline CNN training
+- Batch size and learning rate optimization
+- Regularization tuning (dropout, weight decay)
+- Input image size optimization
 
-It should print your Kaggle username.
+## Tech Stack
 
-## 4. Download and prepare the data
+- Python
+- TensorFlow / Keras
+- NumPy, Matplotlib
 
-I have placed a series of commands to download and organize the images in a shell script for you. To use the script, you need to make it executable and then run it. From you codespace terminal run the following commands:
+## Results
 
-```bash
-sudo chmod u+x ./get_data.sh
-./get_data.sh
-```
+Iterative tuning of batch size, learning rate, regularization strategy, and input image dimensions progressively improved model performance over the baseline.
 
-The script downloads the data from Kaggle, decompresses it and moves the training cats and dogs into separate directories.
+## Author
 
-Easy! Now we can work with the data in a Jupyter notebook. Open `src/mvp.ipynb` to get started.
+Taylor Clements, PhD
